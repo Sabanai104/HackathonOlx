@@ -2,19 +2,17 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
 import {View, Button, Text, StyleSheet, Image, Pressable} from 'react-native';
-const SingleAd = () => {
-  // const {product} = props;
-  const [price, setPrice] = useState(990.0);
+const SingleAd = props => {
+  const {product} = props;
   const [datePub, setDatePub] = useState('DD/MM');
-  const [valDonated, setValDonated] = useState(price * 0, 1);
-  const [productName, setProductName] = useState('Ovo Dourado');
+  const [valDonated, setValDonated] = useState(product.Price * 0.1);
 
   return (
     <View style={styles.container}>
       <View style={{flex: 2, alignItems: 'center'}}>
         {/* <Text>Hello details!</Text> */}
 
-        <Text style={styles.Title}>{productName}</Text>
+        <Text style={styles.Title}>{product.Title}</Text>
         <Image
           style={styles.ProductImage}
           source={{
@@ -24,7 +22,7 @@ const SingleAd = () => {
       </View>
       <View style={{flex: 1.5}}>
         <View style={styles.PriceGreen}>
-          <Text style={styles.PriceText}>R$ {price}</Text>
+          <Text style={styles.PriceText}>R$ {product.Price}</Text>
           <View
             style={{marginLeft: 'auto', display: 'flex', flexDirection: 'row'}}>
             <Text style={{color: '#20D659', paddingRight: 10}}>
@@ -63,7 +61,7 @@ const SingleAd = () => {
       <View>
         <Pressable
           style={styles.CompraItem}
-          onPress={() => console.log('batatinha')}>
+          onPress={() => console.log(typeof (product.Price / 10))}>
           <Text style={{alignSelf: 'center', fontWeight: 'bold'}}>Comprar</Text>
         </Pressable>
         {/* <Button

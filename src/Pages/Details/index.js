@@ -6,10 +6,11 @@ import Navbar from '../../components/Navbar';
 // import data from '../../data';
 import SingleAd from '../SingleAd';
 
-const Details = () => {
+const Details = ({navigation, route}) => {
+  const {product} = route.params;
   return (
     <>
-      <SingleAd />
+      <SingleAd product={product} />
       <Navbar />
     </>
   );

@@ -7,6 +7,7 @@ const Stack = createNativeStackNavigator();
 import Home from './Pages/Home';
 import Details from './Pages/Details';
 import SingleAd from './Pages/SingleAd';
+import Profile from './Pages/Profile';
 
 const Routes = () => {
   return (
@@ -15,6 +16,7 @@ const Routes = () => {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Details" component={Details} />
         <Stack.Screen name="Single Product" component={SingleAd} />
+        <Stack.Screen name="Account" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
   );

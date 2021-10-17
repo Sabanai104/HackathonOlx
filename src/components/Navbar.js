@@ -1,32 +1,32 @@
 import React from 'react';
-import {View, StyleSheet, Text, Image} from 'react-native';
+import {View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 
-export default function Navbar() {
+export default function Navbar({navigation}) {
   return (
     <View style={styles.Navbar}>
       <View style={styles.MenuItem}>
-        <Image style={styles.Icon} source={require('../assets/mais.jpg')} />
+        <Image style={styles.Icon} source={require('../assets/olx.png')} />
       </View>
       <View style={styles.MenuItem}>
-        <Image style={styles.Icon} source={require('../assets/chats.jpg')} />
+        <Image style={styles.Icon} source={require('../assets/chats.png')} />
       </View>
       <View style={styles.MenuItem}>
         <Image
           style={styles.Icon}
-          source={require('../assets/inseriranuncio.jpg')}
+          source={require('../assets/inseriranuncio.png')}
         />
       </View>
       <View style={styles.MenuItem}>
         <Image
           style={styles.Icon}
-          source={require('../assets/minhaconta.jpg')}
+          source={require('../assets/minhaconta.png')}
         />
       </View>
       <View style={styles.MenuItem}>
-        <Image style={styles.Icon} source={require('../assets/espaço.jpg')} />
+        <Image style={styles.Icon} source={require('../assets/verde.png')} />
       </View>
       <View style={styles.MenuItem}>
-        <Image style={styles.Icon} source={require('../assets/mais.jpg')} />
+        <Image style={styles.Icon} source={require('../assets/mais.png')} />
       </View>
     </View>
   );
@@ -34,7 +34,7 @@ export default function Navbar() {
 
 const styles = StyleSheet.create({
   Navbar: {
-    backgroundColor: '#ff0',
+    backgroundColor: '#fff',
     width: '100%',
     height: '8%',
     marginTop: 'auto',
@@ -42,10 +42,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   MenuItem: {
-    backgroundColor: 'red',
+    backgroundColor: '#fff',
   },
   Icon: {
-    width: 68,
+    width: 66,
     height: '100%',
   },
 });
