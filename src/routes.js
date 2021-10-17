@@ -6,6 +6,7 @@ const Stack = createNativeStackNavigator();
 
 import Home from './Pages/Home';
 import Details from './Pages/Details';
+import SingleAd from './Pages/SingleAd';
 
 const Routes = () => {
   return (
@@ -13,9 +14,10 @@ const Routes = () => {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen name="Single Product" component={SingleAd} />
       </Stack.Navigator>
     </NavigationContainer>
-  )
+  );
 };
 
 export default Routes;
