@@ -1,9 +1,9 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet} from 'react-native';
 
 const GreenSpace = () => {
   return (
-    <>
+    <View style={styles.All}>
       <View style={styles.PurpleTop}>
         <Text style={styles.TopText}>Espaço Verde</Text>
       </View>
@@ -15,11 +15,16 @@ const GreenSpace = () => {
         <Text style={styles.StatusText.Progress}>Progresso atual</Text>
         <Text style={styles.StatusText.Percentage}>15%</Text>
       </View>
-    </>
+      <Image
+        style={styles.Tree}
+        source={require('../../assets/arvore1-min.png')}
+      />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  All: {backgroundColor: '#ffffff'},
   PurpleTop: {
     backgroundColor: '#6D0AD6',
     height: '17%',
@@ -61,6 +66,10 @@ const styles = StyleSheet.create({
       color: '#20D659',
       fontWeight: 'bold',
     },
+  },
+  Tree: {
+    // width: '100%',
+    marginTop: 26,
   },
 });
 
