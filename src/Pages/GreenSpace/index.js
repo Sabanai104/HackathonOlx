@@ -1,19 +1,31 @@
-import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {
+  TouchableOpacity,
+  Modal,
+  View,
+  Text,
+  Image,
+  StyleSheet,
+} from 'react-native';
 
 const GreenSpace = () => {
+  const [progress, setProgress] = useState(15);
+  const [visibleModal, setVisibleModal] = useState(false);
   return (
     <View>
+      <Modal transparent={true} visible={visibleModal}>
+        <Text>Teste</Text>
+      </Modal>
       <View style={styles.PurpleTop}>
         <Text style={styles.TopText}>Espaço Verde</Text>
       </View>
       <View style={styles.ProgressBar}>
-        <View style={styles.ProgressedBar} />
+        <View style={ProgressedBar(progress)} />
       </View>
 
       <View style={styles.StatusText}>
         <Text style={styles.StatusText.Progress}>Progresso atual</Text>
-        <Text style={styles.StatusText.Percentage}>15%</Text>
+        <Text style={styles.StatusText.Percentage}>{progress}%</Text>
       </View>
       <Image
         style={styles.Tree}
@@ -25,10 +37,16 @@ const GreenSpace = () => {
           <Text style={styles.CoinAmount}>1X</Text>
         </View>
         <View style={styles.BottomRight}>
-          <Image
-            style={styles.interogation}
-            source={require('../../assets/interrogation.png')}
-          />
+          {/* <Presseble
+            onPress={() => {
+              setVisibleModal(true);
+            }}></Presseble> */}
+          <TouchableOpacity onPress={() => setVisibleModal(true)}>
+            <Image
+              style={styles.interogation}
+              source={require('../../assets/interrogation.png')}
+            />
+          </TouchableOpacity>
           <Image
             style={styles.trophy}
             source={require('../../assets/trophy.png')}
@@ -38,6 +56,33 @@ const GreenSpace = () => {
     </View>
   );
 };
+
+function ProgressedBar(progress) {
+  if (progress && progress <= 100 && progress >= 0) {
+    return StyleSheet.create({
+      backgroundColor: '#F88324',
+      height: 20,
+      width: progress + '%',
+      borderRadius: 10,
+    });
+  }
+  if (progress < 0) {
+    return StyleSheet.create({
+      backgroundColor: '#F88324',
+      height: 20,
+      width: '0%',
+      borderRadius: 10,
+    });
+  }
+  if (progress > 0) {
+    return StyleSheet.create({
+      backgroundColor: '#F88324',
+      height: 20,
+      width: '100%',
+      borderRadius: 10,
+    });
+  }
+}
 
 const styles = StyleSheet.create({
   All: {backgroundColor: '#ffffff'},
@@ -66,7 +111,7 @@ const styles = StyleSheet.create({
   ProgressedBar: {
     backgroundColor: '#F88324',
     height: 20,
-    width: '15%',
+    // width: this.progress + '%',
     borderRadius: 10,
   },
   StatusText: {
@@ -115,7 +160,7 @@ const styles = StyleSheet.create({
   CoinAmount: {
     fontSize: 18,
     color: '#000',
-    fontWeight: 'semibold',
+    fontWeight: '600',
     marginLeft: 8,
   },
 });
