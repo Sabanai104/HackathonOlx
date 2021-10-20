@@ -26,9 +26,16 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     textAlign: 'justify',
   },
-  inputPicker:{
+  inputPicker: {
     height: 50,
     width: 150,
+  },
+  photoImage: {
+    width: 'auto',
+    height: 295,
+  },
+  checkbox: {
+    alignSelf: 'center',
   },
 });
 
