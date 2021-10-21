@@ -11,7 +11,7 @@ import {
 import InformationModal from '../../components/InformationModal';
 
 const GreenSpace = () => {
-  const [progress, setProgress] = useState(15);
+  const [progress, setProgress] = useState(100);
   const [visibleModal, setVisibleModal] = useState(false);
   return (
     <View>
@@ -31,10 +31,7 @@ const GreenSpace = () => {
         <Text style={styles.StatusText.Progress}>Progresso atual</Text>
         <Text style={styles.StatusText.Percentage}>{progress}%</Text>
       </View>
-      <Image
-        style={styles.Tree}
-        source={require('../../assets/arvore1-min.png')}
-      />
+      <Image style={styles.Tree} source={TreeSelect(progress)} />
       <View style={styles.Bottom}>
         <View style={styles.BottomLeft}>
           <Image source={require('../../assets/coin1.png')} />
@@ -82,6 +79,12 @@ function ProgressedBar(progress) {
       borderRadius: 10,
     });
   }
+}
+
+function TreeSelect(progress) {
+  if (progress < 60) return require('../../assets/arvore1-min.png');
+  if (progress < 100) return require('../../assets/arvore2-min.png');
+  return require('../../assets/arvore3-min.png');
 }
 
 const styles = StyleSheet.create({
