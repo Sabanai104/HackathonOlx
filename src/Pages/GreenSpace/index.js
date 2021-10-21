@@ -14,7 +14,50 @@ const GreenSpace = () => {
   return (
     <View>
       <Modal transparent={true} visible={visibleModal}>
-        <Text>Teste</Text>
+        <View style={ModalStyles.Modal}>
+          <View>
+            <TouchableOpacity
+              style={ModalStyles.CloseButton}
+              onPress={() => setVisibleModal(false)}>
+              <Text style={ModalStyles.CloseText}>x</Text>
+            </TouchableOpacity>
+          </View>
+          <Text style={ModalStyles.Text}>
+            Esse é um espaço de recompensas do espaço verde. Para conseguir um
+            token, você precisacultivar uma arvore por completo.
+          </Text>
+          <Text style={ModalStyles.Text}>
+            Cultivando ávores digitais,você ajuda a plantar mais arvores na vida
+            real,ajudando a ONG Team Trees.
+          </Text>
+          <View>
+            <Text style={ModalStyles.Text}>
+              O sistema de recompensa pode sortear os seus itens, tendo eles 3
+              categorias.
+            </Text>
+            <View style={ModalStyles.Category}>
+              <Image
+                source={require('../../assets/circuloVerde.png')}
+                style={ModalStyles.CategoryImage}
+              />
+              <Text style={ModalStyles.CategoryText}>Incomum</Text>
+            </View>
+            <View style={ModalStyles.Category}>
+              <Image
+                source={require('../../assets/circuloRoxo.png')}
+                style={ModalStyles.CategoryImage}
+              />
+              <Text style={ModalStyles.CategoryText}>Raro</Text>
+            </View>
+            <View style={ModalStyles.Category}>
+              <Image
+                source={require('../../assets/circuloLaranja.png')}
+                style={ModalStyles.CategoryImage}
+              />
+              <Text style={ModalStyles.CategoryText}>Lendário</Text>
+            </View>
+          </View>
+        </View>
       </Modal>
       <View style={styles.PurpleTop}>
         <Text style={styles.TopText}>Espaço Verde</Text>
@@ -83,6 +126,45 @@ function ProgressedBar(progress) {
     });
   }
 }
+
+const ModalStyles = StyleSheet.create({
+  CloseButton: {
+    alignSelf: 'flex-end',
+    marginRight: 18,
+    marginTop: 18,
+    marginBottom: 7,
+  },
+  CloseText: {
+    fontSize: 25,
+    fontWeight: '500',
+    fontFamily: 'Nunito',
+    color: '#000',
+  },
+  Modal: {
+    backgroundColor: '#FFFFFF',
+    maxWidth: '85%',
+    alignSelf: 'center',
+    paddingRight: 15,
+    paddingLeft: 15,
+    marginTop: '40%',
+  },
+  Text: {
+    fontSize: 16,
+    color: '#000',
+  },
+  Category: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  CategoryText: {
+    fontSize: 16,
+    color: '#000',
+    marginLeft: 9,
+  },
+  CategoryImage: {},
+});
 
 const styles = StyleSheet.create({
   All: {backgroundColor: '#ffffff'},
