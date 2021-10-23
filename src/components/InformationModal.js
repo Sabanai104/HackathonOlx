@@ -77,7 +77,6 @@ const styles = StyleSheet.create({
   CloseText: {
     fontSize: 25,
     fontWeight: '500',
-    fontFamily: 'Nunito',
     color: '#000',
   },
   Modal: {

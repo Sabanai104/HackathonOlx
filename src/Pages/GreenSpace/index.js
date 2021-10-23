@@ -11,7 +11,7 @@ import {
 import InformationModal from '../../components/InformationModal';
 
 const GreenSpace = () => {
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(100);
   const [visibleModal, setVisibleModal] = useState(false);
   return (
     <View style={styles.All}>
