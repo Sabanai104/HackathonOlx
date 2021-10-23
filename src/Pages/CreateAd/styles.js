@@ -88,6 +88,12 @@ const styles = StyleSheet.create({
     marginLeft: 335,
     alignSelf: 'center',
   },
+  helpImage: {
+    width: 15,
+    height: 15,
+    marginLeft: 128,
+    alignSelf: 'center',
+  },
 });
 
 export default styles;

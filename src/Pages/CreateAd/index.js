@@ -33,7 +33,7 @@ const CreateAd = () => {
               onChangeText={onChangeNumber}
               value={number}
               placeholder="Ex: Samsung S9 novo na caixa"
-              keyboardType="text"
+              keyboardType="default"
             />
           </View>
           <View style={styles.inputContainer}>
@@ -44,7 +44,7 @@ const CreateAd = () => {
               value={descriptionNumber}
               multiline={true}
               placeholder="Ex: Samsung S9 novo na caixa com 128gb de memória, com caixa, todos os cabos e sem marcas de uso."
-              keyboardType="text"
+              keyboardType="default"
             />
           </View>
           <View style={styles.inputContainer}>
@@ -54,7 +54,7 @@ const CreateAd = () => {
               onChangeText={onChangeCategory}
               value={category}
               placeholder="Ex: Móveis"
-              keyboardType="text"
+              keyboardType="default"
             />
           </View>
           <View style={styles.inputContainer}>
@@ -73,6 +73,11 @@ const CreateAd = () => {
               onChange={() => setAgree(!agree)}
             />
             <Text style={styles.checkboxText}>Compra Segura</Text>
+            <Image
+              style={styles.helpImage}
+              onClick={() => console.log('aaaaaa')}
+              source={require('../../assets/question.png')}
+            />
           </View>
           {agree ? (
             <>
