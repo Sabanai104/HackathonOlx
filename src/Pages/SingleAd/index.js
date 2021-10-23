@@ -1,7 +1,7 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState, useContext} from 'react';
-import {View, Button, Text, StyleSheet, Image, Pressable} from 'react-native';
+import {View, Text, StyleSheet, Image, Pressable, Alert} from 'react-native';
 import {Context} from '../../context/context';
 
 const SingleAd = props => {
@@ -63,15 +63,11 @@ const SingleAd = props => {
       <View>
         <Pressable
           style={styles.CompraItem}
-          onPress={() => addProgress(product.Price / 100)}>
+          onPress={() => {
+            addProgress(product.Price / 100), Alert.alert('Compra confirmada!');
+          }}>
           <Text style={{alignSelf: 'center', fontWeight: 'bold'}}>Comprar</Text>
         </Pressable>
-        {/* <Button
-          title="Comprar"
-          color="#F88324"
-          onPress={() => console.log('batatinha 1 2 3')}
-          style={styles.CompraItem}
-        /> */}
       </View>
     </View>
   );
