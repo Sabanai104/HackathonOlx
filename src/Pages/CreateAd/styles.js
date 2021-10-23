@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     marginLeft: '10%',
   },
   greenCheckboxText: {
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: 'bold',
     color: '#86D940',
     position: 'absolute',
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   },
   leafImage: {
     position: 'absolute',
-    marginLeft: 320,
+    marginLeft: 310,
     alignSelf: 'center',
   },
   helpImage: {

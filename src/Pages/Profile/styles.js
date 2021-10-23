@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     height: "100%",
+    color: 'black',
   },
   ProfileUser: {},
   ProfilePicture: {

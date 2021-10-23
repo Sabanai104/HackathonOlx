@@ -25,7 +25,7 @@ const CreateAd = () => {
 
   return (
     <>
-      <View>
+      <View style={{color: 'black'}}>
         <Help visibleModal={visibleModal} setVisibleModal={setVisibleModal} />
         <ScrollView>
           <Image

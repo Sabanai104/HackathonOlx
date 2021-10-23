@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
   container: {
     // flex: 1,
     padding: 10,
+    color: 'black',
   },
   ProductImage: {
     width: 128,
@@ -46,5 +47,6 @@ const styles = StyleSheet.create({
     Title: {},
     Price: {fontWeight: 'bold'},
     Adress: {fontWeight: '200'},
+    color: 'black',
   },
 });

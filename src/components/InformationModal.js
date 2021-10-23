@@ -23,7 +23,7 @@ export default function InformationModal(props) {
           </View>
           <Text style={styles.Text}>
             Esse é um espaço de recompensas do espaço verde. Para conseguir um
-            token, você precisacultivar uma arvore por completo.
+            token, você precisa cultivar uma árvore por completo.
           </Text>
           <Text style={styles.Text}>
             Cultivando ávores digitais,você ajuda a plantar mais arvores na vida

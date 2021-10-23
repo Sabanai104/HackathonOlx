@@ -1,5 +1,11 @@
 export default [
-  {image: {}, Title: 'Produto 1', Price: 500, Adress: 'Gotham City', Description: ''},
+  {
+    image: {},
+    Title: 'Produto 1',
+    Price: 500,
+    Adress: 'Gotham City',
+    Description: '',
+  },
   {
     image: {},
     Title: 'Produto 2',
@@ -47,6 +53,13 @@ export default [
     image: {},
     Title: 'Produto 9',
     Price: 30000,
+    Adress: 'Vila da Areia',
+    Description: '',
+  },
+  {
+    image: {},
+    Title: 'Produto 10',
+    Price: 6000,
     Adress: 'Vila da Areia',
     Description: '',
   },
