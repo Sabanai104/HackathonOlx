@@ -2,7 +2,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-
+import {Provider} from './context/context';
 const HomeStack = createNativeStackNavigator();
 const GreenSpaceStack = createNativeStackNavigator();
 
@@ -58,11 +58,9 @@ const Routes = () => {
         <Tab.Screen name="Inserir um anúncio" component={CreateAd} />
         <Tab.Screen name="Minha Conta" component={Profile} />
         <Tab.Screen name="Espaço Verde" component={GreenSpaceStackNavigation} />
-        {/* <Tab.Screen name="Details" component={Details} /> */}
-        {/* <Tab.Screen name="Single Product" component={SingleAd} />
-        <Tab.Screen name="Account" component={Profile} /> */}
-      </Tab.Navigator>
-    </NavigationContainer>
+        </Tab.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 };
 

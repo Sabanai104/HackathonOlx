@@ -1,20 +1,16 @@
-import React, { useState } from 'react';
-import {
-  TouchableOpacity,
-  Modal,
-  View,
-  Text,
-  Image,
-  StyleSheet,
-} from 'react-native';
+import React, {useState, useContext} from 'react';
+import {TouchableOpacity, View, Text, Image, StyleSheet} from 'react-native';
 
 import InformationModal from '../../components/InformationModal';
 
-const GreenSpace = ({ navigation }) => {
-  const [progress, setProgress] = useState(100);
+import {Context} from '../../context/context';
+
+const GreenSpace = ({navigation}) => {
+  const {progress} = useContext(Context);
+  // const [((progress / 500) * 100), setPercent] = useState((progress / 500) * 100);
   const [visibleModal, setVisibleModal] = useState(false);
   return (
-    <View>
+    <View style={styles.All}>
       <InformationModal
         visibleModal={visibleModal}
         setVisibleModal={setVisibleModal}
@@ -23,14 +19,16 @@ const GreenSpace = ({ navigation }) => {
         <Text style={styles.TopText}>Espaço Verde</Text>
       </View>
       <View style={styles.ProgressBar}>
-        <View style={ProgressedBar(progress)} />
+        <View style={ProgressedBar((progress / 500) * 100)} />
       </View>
 
       <View style={styles.StatusText}>
         <Text style={styles.StatusText.Progress}>Progresso atual</Text>
-        <Text style={styles.StatusText.Percentage}>{progress}%</Text>
+        <Text style={styles.StatusText.Percentage}>
+          {((progress / 500) * 100).toFixed(1)}%
+        </Text>
       </View>
-      <Image style={styles.Tree} source={TreeSelect(progress)} />
+      <Image style={styles.Tree} source={TreeSelect((progress / 500) * 100)} />
       <View style={styles.Bottom}>
         <View style={styles.BottomLeft}>
           <Image source={require('../../assets/coin1.png')} />
@@ -83,13 +81,19 @@ function ProgressedBar(progress) {
 }
 
 function TreeSelect(progress) {
-  if (progress < 60) return require('../../assets/arvore1-min.png');
-  if (progress < 100) return require('../../assets/arvore2-min.png');
-  return require('../../assets/arvore3-min.png');
+  if (progress < 5) return require('../../assets/arvore1-min.png');
+  if (progress < 15) return require('../../assets/arvore2-min.png');
+  if (progress < 40) return require('../../assets/arvore3-min.png');
+  if (progress < 50) return require('../../assets/arvore4-min.png');
+  if (progress < 60) return require('../../assets/arvore5-min.png');
+  if (progress < 80) return require('../../assets/arvore6-min.png');
+  if (progress < 100) return require('../../assets/arvore7-min.png');
+
+  return require('../../assets/arvore8-min.png');
 }
 
 const styles = StyleSheet.create({
-  All: { backgroundColor: '#ffffff' },
+  All: {backgroundColor: '#ffffff', height: '100%'},
   PurpleTop: {
     backgroundColor: '#6D0AD6',
     height: '18%',
@@ -144,11 +148,15 @@ const styles = StyleSheet.create({
     // width: '100%',
     marginTop: 26,
     marginBottom: 'auto',
+    // maxWidth: 100,
+    height: 300,
+    width: 400,
   },
   Bottom: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginBottom: 15,
     // backgroundColor: '#000000',
   },
   BottomRight: {

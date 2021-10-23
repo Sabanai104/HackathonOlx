@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  Modal,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
+import {View, Text, Modal, StyleSheet, TouchableOpacity} from 'react-native';
 
 export default function InformationModal(props) {
   const {visibleModal, setVisibleModal} = props;
@@ -22,39 +15,23 @@ export default function InformationModal(props) {
             </TouchableOpacity>
           </View>
           <Text style={styles.Text}>
-            Esse é um espaço de recompensas do espaço verde. Para conseguir um
-            token, você precisacultivar uma arvore por completo.
+            A Compra Segura é uma nova solução da OLX que garante a segurança e
+            praticidade da transação. A partir de sua criação a OLX passa a
+            aceitar compras através da plataforma, aproximando-se de um modelo
+            de e-commerce, onde a transação é assegurada pela empresa.
           </Text>
           <Text style={styles.Text}>
-            Cultivando ávores digitais,você ajuda a plantar mais arvores na vida
-            real,ajudando a ONG Team Trees.
+            O Compra Segura é um produto oferecido através da plataforma OLX
+            Pay. Além dela, o comprador pode optar também pela disponibilidade
+            de testes dos produtos em postos de troca oficiais.
           </Text>
           <View>
             <Text style={styles.Text}>
-              O sistema de recompensa pode sortear os seus itens, tendo eles 3
-              categorias.
+              Além disso, ao optar pela Compra Segura, você estará colaborando
+              com a Iniciativa Verde, na qual 1% de cada venda é destinada para
+              fundo da OLX, direcionado ao plantio de árvores através da ONG
+              Team Trees.
             </Text>
-            <View style={styles.Category}>
-              <Image
-                source={require('../assets/circuloVerde.png')}
-                style={styles.CategoryImage}
-              />
-              <Text style={styles.CategoryText}>Incomum</Text>
-            </View>
-            <View style={styles.Category}>
-              <Image
-                source={require('../assets/circuloRoxo.png')}
-                style={styles.CategoryImage}
-              />
-              <Text style={styles.CategoryText}>Raro</Text>
-            </View>
-            <View style={styles.Category}>
-              <Image
-                source={require('../assets/circuloLaranja.png')}
-                style={styles.CategoryImage}
-              />
-              <Text style={styles.CategoryText}>Lendário</Text>
-            </View>
           </View>
         </View>
       </View>
@@ -90,6 +67,8 @@ const styles = StyleSheet.create({
   Text: {
     fontSize: 16,
     color: '#000',
+    marginBottom: '5%',
+    textAlign: 'justify',
   },
   Category: {
     display: 'flex',
