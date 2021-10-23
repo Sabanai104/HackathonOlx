@@ -12,6 +12,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		17CA5834E60961231C2414D0 /* libPods-HackathonOlx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 200132F2CB6BAA167B8B4116 /* libPods-HackathonOlx.a */; };
+		5E034B9A27239C24002A0926 /* ForceBridgingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E034B9927239C24002A0926 /* ForceBridgingHeader.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		D395ADC7F0841CED11A6FF79 /* libPods-HackathonOlx-HackathonOlxTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 784D0559807BC74BC3AEBFF5 /* libPods-HackathonOlx-HackathonOlxTests.a */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,8 @@
 		200132F2CB6BAA167B8B4116 /* libPods-HackathonOlx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HackathonOlx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EFC86C3F0DD5429E31B90FB /* Pods-HackathonOlx-HackathonOlxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackathonOlx-HackathonOlxTests.release.xcconfig"; path = "Target Support Files/Pods-HackathonOlx-HackathonOlxTests/Pods-HackathonOlx-HackathonOlxTests.release.xcconfig"; sourceTree = "<group>"; };
 		3790FEDF8CD6F4A165C3BCC8 /* Pods-HackathonOlx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackathonOlx.release.xcconfig"; path = "Target Support Files/Pods-HackathonOlx/Pods-HackathonOlx.release.xcconfig"; sourceTree = "<group>"; };
+		5E034B9827239C24002A0926 /* HackathonOlx-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HackathonOlx-Bridging-Header.h"; sourceTree = "<group>"; };
+		5E034B9927239C24002A0926 /* ForceBridgingHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceBridgingHeader.swift; sourceTree = "<group>"; };
 		784D0559807BC74BC3AEBFF5 /* libPods-HackathonOlx-HackathonOlxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HackathonOlx-HackathonOlxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = HackathonOlx/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -92,6 +95,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				5E034B9927239C24002A0926 /* ForceBridgingHeader.swift */,
+				5E034B9827239C24002A0926 /* HackathonOlx-Bridging-Header.h */,
 			);
 			name = HackathonOlx;
 			sourceTree = "<group>";
@@ -104,7 +109,6 @@
 				EF423520A89BC001C5A5CC49 /* Pods-HackathonOlx-HackathonOlxTests.debug.xcconfig */,
 				2EFC86C3F0DD5429E31B90FB /* Pods-HackathonOlx-HackathonOlxTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,7 +212,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1300;
 					};
 				};
 			};
@@ -411,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E034B9A27239C24002A0926 /* ForceBridgingHeader.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
@@ -431,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EF423520A89BC001C5A5CC49 /* Pods-HackathonOlx-HackathonOlxTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -458,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2EFC86C3F0DD5429E31B90FB /* Pods-HackathonOlx-HackathonOlxTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = HackathonOlxTests/Info.plist;
@@ -498,6 +505,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = HackathonOlx;
+				SWIFT_OBJC_BRIDGING_HEADER = "HackathonOlx-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -523,6 +531,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = HackathonOlx;
+				SWIFT_OBJC_BRIDGING_HEADER = "HackathonOlx-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -561,7 +570,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -627,7 +636,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
