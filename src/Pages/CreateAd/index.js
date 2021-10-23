@@ -82,7 +82,7 @@ const CreateAd = () => {
             <TouchableOpacity onPress={() => setVisibleModal(true)}>
               <Image
                 style={styles.helpImage}
-                source={require('../../assets/Question.png')}
+                source={require('../../assets/question.png')}
               />
             </TouchableOpacity>
           </View>
