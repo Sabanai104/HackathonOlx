@@ -1,5 +1,5 @@
 import React, {createContext, useState, useEffect} from 'react';
-import {AsyncStorage} from '@react-native-async-storage/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const Context = createContext();
 
@@ -10,16 +10,20 @@ export function Provider({children}) {
     restoreProgress();
   }, []);
 
-  const restoreProgress = () => {
-    // eslint-disable-next-line radix
-    const tempProgress = parseInt(AsyncStorage.getItem('progress'));
+  useEffect(() => {
+    console.log({progress});
+  }, [progress]);
 
-    if (tempProgress) setProgress(tempProgress);
+  const restoreProgress = async () => {
+    // eslint-disable-next-line radix
+    const tempProgress = parseInt(await AsyncStorage.getItem('progress'));
+
+    if (tempProgress) setProgress(tempProgress.toString());
   };
 
-  const addProgress = recentProgres => {
+  const addProgress = async recentProgres => {
     setProgress(progress + recentProgres);
-    AsyncStorage.setItem('progress', progress);
+    await AsyncStorage.setItem('progress', progress.toString());
   };
 
   return (
