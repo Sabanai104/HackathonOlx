@@ -5,10 +5,7 @@ export const Context = createContext();
 
 export function Provider({children}) {
   const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    restoreProgress();
-  }, []);
+  const [coin, setCoin] = useState(0);
 
   useEffect(() => {
     console.log({progress});
@@ -26,11 +23,25 @@ export function Provider({children}) {
     await AsyncStorage.setItem('progress', progress.toString());
   };
 
+  const settingProgress = async newProgress => {
+    setProgress(newProgress);
+    await AsyncStorage.setItem('progress', progress.toString());
+  };
+
+  const settingCoin = async coins => {
+    setCoin(coins);
+    await AsyncStorage.setItem('coin', coin.toString());
+  }
+
+
   return (
     <Context.Provider
       value={{
         progress,
         addProgress,
+        settingProgress,
+        coin,
+        settingCoin,
       }}>
       {children}
     </Context.Provider>
