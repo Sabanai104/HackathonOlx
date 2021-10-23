@@ -6,8 +6,12 @@ import {
   Image,
   ScrollView,
   Pressable,
+  TouchableOpacity,
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
+
+import Help from '../../components/Help';
+
 import styles from './styles';
 
 const CreateAd = () => {
@@ -17,10 +21,12 @@ const CreateAd = () => {
   const [category, onChangeCategory] = React.useState(null);
   const [agree, setAgree] = React.useState(false);
   const [agreeGreenSpace, setAgreeGreenSpace] = React.useState(false);
+  const [visibleModal, setVisibleModal] = React.useState(false);
 
   return (
     <>
       <View>
+        <Help visibleModal={visibleModal} setVisibleModal={setVisibleModal} />
         <ScrollView>
           <Image
             style={styles.photoImage}
@@ -73,10 +79,12 @@ const CreateAd = () => {
               onChange={() => setAgree(!agree)}
             />
             <Text style={styles.checkboxText}>Compra Segura</Text>
-            <Image
-              style={styles.helpImage}
-              source={require('../../assets/Question.png')}
-            /> 
+            <TouchableOpacity onPress={() => setVisibleModal(true)}>
+              <Image
+                style={styles.helpImage}
+                source={require('../../assets/Question.png')}
+              />
+            </TouchableOpacity>
           </View>
           {agree ? (
             <>

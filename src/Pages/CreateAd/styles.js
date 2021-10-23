@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
     height: 15,
     marginLeft: 128,
     alignSelf: 'center',
+    top: '30%',
   },
 });
 
