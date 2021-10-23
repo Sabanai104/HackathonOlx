@@ -11,10 +11,10 @@ import {
 import InformationModal from '../../components/InformationModal';
 
 const GreenSpace = () => {
-  const [progress, setProgress] = useState(100);
+  const [progress, setProgress] = useState(0);
   const [visibleModal, setVisibleModal] = useState(false);
   return (
-    <View>
+    <View style={styles.All}>
       <InformationModal
         visibleModal={visibleModal}
         setVisibleModal={setVisibleModal}
@@ -82,13 +82,19 @@ function ProgressedBar(progress) {
 }
 
 function TreeSelect(progress) {
-  if (progress < 60) return require('../../assets/arvore1-min.png');
-  if (progress < 100) return require('../../assets/arvore2-min.png');
-  return require('../../assets/arvore3-min.png');
+  if (progress < 5) return require('../../assets/arvore1-min.png');
+  if (progress < 15) return require('../../assets/arvore2-min.png');
+  if (progress < 40) return require('../../assets/arvore3-min.png');
+  if (progress < 50) return require('../../assets/arvore4-min.png');
+  if (progress < 60) return require('../../assets/arvore5-min.png');
+  if (progress < 80) return require('../../assets/arvore6-min.png');
+  if (progress < 100) return require('../../assets/arvore7-min.png');
+
+  return require('../../assets/arvore8-min.png');
 }
 
 const styles = StyleSheet.create({
-  All: {backgroundColor: '#ffffff'},
+  All: {backgroundColor: '#ffffff', height: '100%'},
   PurpleTop: {
     backgroundColor: '#6D0AD6',
     height: '18%',
@@ -135,11 +141,15 @@ const styles = StyleSheet.create({
     // width: '100%',
     marginTop: 26,
     marginBottom: 'auto',
+    // maxWidth: 100,
+    height: 300,
+    width: 400,
   },
   Bottom: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginBottom: 15,
     // backgroundColor: '#000000',
   },
   BottomRight: {

@@ -12,47 +12,49 @@ export default function InformationModal(props) {
   const {visibleModal, setVisibleModal} = props;
   return (
     <Modal transparent={true} visible={visibleModal}>
-      <View style={styles.Modal}>
-        <View>
-          <TouchableOpacity
-            style={styles.CloseButton}
-            onPress={() => setVisibleModal(false)}>
-            <Text style={styles.CloseText}>x</Text>
-          </TouchableOpacity>
-        </View>
-        <Text style={styles.Text}>
-          Esse é um espaço de recompensas do espaço verde. Para conseguir um
-          token, você precisacultivar uma arvore por completo.
-        </Text>
-        <Text style={styles.Text}>
-          Cultivando ávores digitais,você ajuda a plantar mais arvores na vida
-          real,ajudando a ONG Team Trees.
-        </Text>
-        <View>
+      <View style={styles.Background}>
+        <View style={styles.Modal}>
+          <View>
+            <TouchableOpacity
+              style={styles.CloseButton}
+              onPress={() => setVisibleModal(false)}>
+              <Text style={styles.CloseText}>x</Text>
+            </TouchableOpacity>
+          </View>
           <Text style={styles.Text}>
-            O sistema de recompensa pode sortear os seus itens, tendo eles 3
-            categorias.
+            Esse é um espaço de recompensas do espaço verde. Para conseguir um
+            token, você precisacultivar uma arvore por completo.
           </Text>
-          <View style={styles.Category}>
-            <Image
-              source={require('../assets/circuloVerde.png')}
-              style={styles.CategoryImage}
-            />
-            <Text style={styles.CategoryText}>Incomum</Text>
-          </View>
-          <View style={styles.Category}>
-            <Image
-              source={require('../assets/circuloRoxo.png')}
-              style={styles.CategoryImage}
-            />
-            <Text style={styles.CategoryText}>Raro</Text>
-          </View>
-          <View style={styles.Category}>
-            <Image
-              source={require('../assets/circuloLaranja.png')}
-              style={styles.CategoryImage}
-            />
-            <Text style={styles.CategoryText}>Lendário</Text>
+          <Text style={styles.Text}>
+            Cultivando ávores digitais,você ajuda a plantar mais arvores na vida
+            real,ajudando a ONG Team Trees.
+          </Text>
+          <View>
+            <Text style={styles.Text}>
+              O sistema de recompensa pode sortear os seus itens, tendo eles 3
+              categorias.
+            </Text>
+            <View style={styles.Category}>
+              <Image
+                source={require('../assets/circuloVerde.png')}
+                style={styles.CategoryImage}
+              />
+              <Text style={styles.CategoryText}>Incomum</Text>
+            </View>
+            <View style={styles.Category}>
+              <Image
+                source={require('../assets/circuloRoxo.png')}
+                style={styles.CategoryImage}
+              />
+              <Text style={styles.CategoryText}>Raro</Text>
+            </View>
+            <View style={styles.Category}>
+              <Image
+                source={require('../assets/circuloLaranja.png')}
+                style={styles.CategoryImage}
+              />
+              <Text style={styles.CategoryText}>Lendário</Text>
+            </View>
           </View>
         </View>
       </View>
@@ -61,11 +63,16 @@ export default function InformationModal(props) {
 }
 
 const styles = StyleSheet.create({
+  Background: {
+    height: '100%',
+    backgroundColor: 'rgba(0,0,0,0.5)',
+  },
   CloseButton: {
     alignSelf: 'flex-end',
     marginRight: 18,
     marginTop: 18,
     marginBottom: 7,
+    padding: 0.5,
   },
   CloseText: {
     fontSize: 25,
@@ -90,6 +97,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: 10,
+    marginBottom: 8,
   },
   CategoryText: {
     fontSize: 16,
