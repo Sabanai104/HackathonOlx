@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   TouchableOpacity,
   Modal,
@@ -10,7 +10,7 @@ import {
 
 import InformationModal from '../../components/InformationModal';
 
-const GreenSpace = () => {
+const GreenSpace = ({ navigation }) => {
   const [progress, setProgress] = useState(100);
   const [visibleModal, setVisibleModal] = useState(false);
   return (
@@ -19,7 +19,6 @@ const GreenSpace = () => {
         visibleModal={visibleModal}
         setVisibleModal={setVisibleModal}
       />
-
       <View style={styles.PurpleTop}>
         <Text style={styles.TopText}>Espaço Verde</Text>
       </View>
@@ -44,10 +43,12 @@ const GreenSpace = () => {
               source={require('../../assets/interrogation.png')}
             />
           </TouchableOpacity>
-          <Image
-            style={styles.trophy}
-            source={require('../../assets/trophy.png')}
-          />
+          <TouchableOpacity onPress={() => navigation.navigate('LootBox')}>
+            <Image
+              style={styles.trophy}
+              source={require('../../assets/trophy.png')}
+            />
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -88,7 +89,7 @@ function TreeSelect(progress) {
 }
 
 const styles = StyleSheet.create({
-  All: {backgroundColor: '#ffffff'},
+  All: { backgroundColor: '#ffffff' },
   PurpleTop: {
     backgroundColor: '#6D0AD6',
     height: '18%',
@@ -96,6 +97,14 @@ const styles = StyleSheet.create({
   TopText: {
     color: '#ffffff',
     fontSize: 16,
+    marginRight: 'auto',
+    marginLeft: 'auto',
+    marginTop: 'auto',
+    marginBottom: 24,
+  },
+  arrowLeft: {
+    width: 100,
+    height: 100,
     marginRight: 'auto',
     marginLeft: 'auto',
     marginTop: 'auto',
