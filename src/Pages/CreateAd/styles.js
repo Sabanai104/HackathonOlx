@@ -44,22 +44,20 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: 'bold',
     position: 'absolute',
-    top: '10%',
-    marginLeft: '9%',
+    marginLeft: '10%',
   },
   greenCheckboxText: {
-    fontSize: 17,
+    fontSize: 15,
     fontWeight: 'bold',
     color: '#86D940',
     position: 'absolute',
-    top: '10%',
-    marginLeft: '9%',
+    marginLeft: '10%',
   },
   checkboxContainer: {
     marginTop: 30,
     marginLeft: 15,
     marginRight: 15,
-    display: 'flex',
+    alignItems: 'center',
     flexDirection: 'row',
   },
   button: {
@@ -85,15 +83,13 @@ const styles = StyleSheet.create({
   },
   leafImage: {
     position: 'absolute',
-    marginLeft: 335,
+    marginLeft: 320,
     alignSelf: 'center',
   },
   helpImage: {
     width: 15,
     height: 15,
-    marginLeft: 128,
-    alignSelf: 'center',
-    top: '30%',
+    marginLeft: 135,
   },
 });
 
