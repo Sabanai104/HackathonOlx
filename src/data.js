@@ -28,7 +28,13 @@ export default [
     Adress: 'terra media',
     Description: '',
   },
-  {image: {}, Title: 'Produto 6', Price: 9, Adress: 'alderam', Description: ''},
+  {
+    image: {},
+    Title: 'Produto 6',
+    Price: 9,
+    Adress: 'alderam',
+    Description: '',
+  },
   {image: {}, Title: 'Produto 7', Price: 10, Adress: 'hott', Description: ''},
   {
     image: {},

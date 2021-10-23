@@ -15,13 +15,15 @@ import GreenSpace from './Pages/GreenSpace';
 
 const HomeStackNavigation = () => {
   return (
-    <HomeStack.Navigator screenOptions={{headerShown: false}}>
+    <HomeStack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
       <HomeStack.Screen name="HomePage" component={Home} />
       <HomeStack.Screen name="Details" component={Details} />
     </HomeStack.Navigator>
   );
 };
-
 
 const Routes = () => {
   return (
