@@ -1,12 +1,14 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {View, Button, Text, StyleSheet, Image, Pressable} from 'react-native';
+import {Context} from '../../context/context';
+
 const SingleAd = props => {
   const {product} = props;
   const [datePub, setDatePub] = useState('DD/MM');
-  const [valDonated, setValDonated] = useState(product.Price * 0.1);
-
+  const [valDonated, setValDonated] = useState(product.Price * 0.01);
+  const {addProgress} = useContext(Context);
   return (
     <View style={styles.container}>
       <View style={{flex: 2, alignItems: 'center'}}>
@@ -61,7 +63,7 @@ const SingleAd = props => {
       <View>
         <Pressable
           style={styles.CompraItem}
-          onPress={() => console.log(typeof (product.Price / 10))}>
+          onPress={() => addProgress(product.Price / 100)}>
           <Text style={{alignSelf: 'center', fontWeight: 'bold'}}>Comprar</Text>
         </Pressable>
         {/* <Button

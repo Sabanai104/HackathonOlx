@@ -1,17 +1,13 @@
-import React, {useState} from 'react';
-import {
-  TouchableOpacity,
-  Modal,
-  View,
-  Text,
-  Image,
-  StyleSheet,
-} from 'react-native';
+import React, {useState, useContext} from 'react';
+import {TouchableOpacity, View, Text, Image, StyleSheet} from 'react-native';
 
 import InformationModal from '../../components/InformationModal';
 
+import {Context} from '../../context/context';
+
 const GreenSpace = () => {
-  const [progress, setProgress] = useState(100);
+  const {progress} = useContext(Context);
+  // const [((progress / 500) * 100), setPercent] = useState((progress / 500) * 100);
   const [visibleModal, setVisibleModal] = useState(false);
   return (
     <View style={styles.All}>
@@ -24,14 +20,16 @@ const GreenSpace = () => {
         <Text style={styles.TopText}>Espaço Verde</Text>
       </View>
       <View style={styles.ProgressBar}>
-        <View style={ProgressedBar(progress)} />
+        <View style={ProgressedBar((progress / 500) * 100)} />
       </View>
 
       <View style={styles.StatusText}>
         <Text style={styles.StatusText.Progress}>Progresso atual</Text>
-        <Text style={styles.StatusText.Percentage}>{progress}%</Text>
+        <Text style={styles.StatusText.Percentage}>
+          {((progress / 500) * 100).toFixed(1)}%
+        </Text>
       </View>
-      <Image style={styles.Tree} source={TreeSelect(progress)} />
+      <Image style={styles.Tree} source={TreeSelect((progress / 500) * 100)} />
       <View style={styles.Bottom}>
         <View style={styles.BottomLeft}>
           <Image source={require('../../assets/coin1.png')} />
