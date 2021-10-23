@@ -75,9 +75,8 @@ const CreateAd = () => {
             <Text style={styles.checkboxText}>Compra Segura</Text>
             <Image
               style={styles.helpImage}
-              onClick={() => console.log('aaaaaa')}
-              source={require('../../assets/question.png')}
-            />
+              source={require('../../assets/Question.png')}
+            /> 
           </View>
           {agree ? (
             <>
