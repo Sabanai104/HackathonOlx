@@ -41,23 +41,27 @@ const GreenSpaceStackNavigation = () => {
 
 const Routes = () => {
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        initialRouteName="Home"
-        screenOptions={{
-          tabBarIconStyle: {display: 'none'},
-          tabBarLabelPosition: '',
-          tabBarLabelStyle: {
-            fontWeight: 'bold',
-            fontSize: 10,
-          },
-          headerShown: false,
-          tabBarActiveTintColor: 'purple',
-        }}>
-        <Tab.Screen name="Home" component={HomeStackNavigation} />
-        <Tab.Screen name="Inserir um anúncio" component={CreateAd} />
-        <Tab.Screen name="Minha Conta" component={Profile} />
-        <Tab.Screen name="Espaço Verde" component={GreenSpaceStackNavigation} />
+    <Provider>
+      <NavigationContainer>
+        <Tab.Navigator
+          initialRouteName="Home"
+          screenOptions={{
+            tabBarIconStyle: {display: 'none'},
+            tabBarLabelPosition: '',
+            tabBarLabelStyle: {
+              fontWeight: 'bold',
+              fontSize: 10,
+            },
+            headerShown: false,
+            tabBarActiveTintColor: 'purple',
+          }}>
+          <Tab.Screen name="Home" component={HomeStackNavigation} />
+          <Tab.Screen name="Inserir um anúncio" component={CreateAd} />
+          <Tab.Screen name="Minha Conta" component={Profile} />
+          <Tab.Screen
+            name="Espaço Verde"
+            component={GreenSpaceStackNavigation}
+          />
         </Tab.Navigator>
       </NavigationContainer>
     </Provider>

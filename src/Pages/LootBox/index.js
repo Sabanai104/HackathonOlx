@@ -1,18 +1,22 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable no-unused-vars */
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {View, Text, Image, TouchableOpacity, Alert} from 'react-native';
 import PremiumModal from '../../components/PremiunModal';
+import InformationModal from '../../components/InformationModal';
+import {Context} from '../../context/context';
+
 import closeBox from '../../assets/closeBox.png';
 import arrowLeft from '../../assets/arrowLeft.png';
 import styles from './styles';
 
 const LootBox = ({navigation}) => {
   const [openModal, setOpenModal] = useState(false);
+  const {coin, settingCoin} = useContext(Context);
   const [backgroundColor, setBackgroundColor] = useState('white');
   const [textPrize, setTextPrize] = useState('');
   const [cupomPrize, setCupomPrize] = useState('');
-  const [coin, setCoin] = useState(1);
+  const [visibleModal, setVisibleModal] = useState(false);
 
   const sortPrize = () => {
     if (coin > 0) {
@@ -30,7 +34,7 @@ const LootBox = ({navigation}) => {
         setTextPrize('Você ganhou um cupom de desconto de 10%');
         setCupomPrize('OLXVERDE');
       }
-      setCoin(coin - 1);
+      settingCoin(coin - 1);
       setOpenModal(true);
     } else {
       Alert.alert(
@@ -41,6 +45,10 @@ const LootBox = ({navigation}) => {
   };
   return (
     <View>
+      <InformationModal
+        visibleModal={visibleModal}
+        setVisibleModal={setVisibleModal}
+      />
       <PremiumModal
         openModal={openModal}
         backgroundModalColor={backgroundColor}
@@ -79,7 +87,7 @@ const LootBox = ({navigation}) => {
               <Image source={require('../../assets/coin1.png')} />
               <Text style={styles.CoinAmount}>{coin}X</Text>
             </View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => setVisibleModal(true)}>
               <Image
                 resizeMode="contain"
                 source={require('../../assets/interrogation.png')}
