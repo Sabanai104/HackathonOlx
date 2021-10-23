@@ -23,11 +23,11 @@ const LootBox = ({navigation}) => {
       const randomNumber = Math.floor(Math.random() * 10);
       if (randomNumber > 0 && randomNumber <= 3) {
         setBackgroundColor('#AC63FA');
-        setTextPrize('Você ganhou um cupom de desconto de 30%');
+        setTextPrize('Você ganhou um cupom de desconto de 15%');
         setCupomPrize('OLXROXO');
       } else if (randomNumber > 3 && randomNumber <= 6) {
         setBackgroundColor('#FC9A4B');
-        setTextPrize('Você ganhou um cupom de desconto de 15%');
+        setTextPrize('Você ganhou um cupom de desconto de 30%');
         setCupomPrize('OLXLARANJA');
       } else {
         setBackgroundColor('#68EE92');
